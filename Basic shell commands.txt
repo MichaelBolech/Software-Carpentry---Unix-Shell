@@ -1,0 +1,57 @@
+ctrl-c: kills current process
+set prompt=$$: shrinks shell text
+clear: clears window
+woamI: who is logged in
+pwd: present working directory
+ls: lists contents of directory/folder
+ls [file]: gives filename back if it exists
+ls [directory/file]: looks into directory and gives filename back if it exists
+ls -F: appends symbols to filenames:
+	@ means symbolic link (or that the file has extended attributes).
+	* means executable.
+	= means socket.
+	| means named pipe.
+	> means door.
+	/ means directory.
+cd && cd Desktop/shell-novice/
+Use tab to autocomplete folder/file name while typing
+cd ~: to home directory (user "test")
+cd /: to root directory (git folder)
+cc ..: 1 level up from the current working directory
+mkdir [name]: create a new directory
+touch [name.extension]: create a new file
+touch [directory/file]: create a new file in folder
+rm [name.extension]: delete file
+rm [directory/file]: delete file in folder
+rmdir: delete directory (if empty)
+mv [directory and/or file] [target directory and/or file]: move (can be used to rename if in the same folder)
+mv [directory and/or file] .: move file to current working directory
+cp [directory and/or file]: Copy (can be used to rename if new name is given
+wc [file]: word count in files. Output: "[Line] [Words] [Characters] [file]"
+wc *.[extension]: word count for all files that end with [extension]
+wc *.?xt: word count for all files that end with [extension] where 1 character can be anything
+wc *.??t: word count for all files that end with [extension] where 2 characters can be anything
+wc *[AB].txt: Anything that is an A or B.
+wc *[!AB].txt: Anything that is not an A or B.
+wc -l [file]: word count only showing number of lines
+>: wedge character, redirect to a file. E.g.: "wc [file] > test.txt" puts the word count data into file
+cat [file]: (catenate) shows contents of file
+sort -n [file]: numeric sort of data in file
+sort -k 2 [file]: alphanumeric sort on 2nd column
+sort -r: reverse order
+head -2 [file]: output of first 2 rows of file
+|: (pipe operator) take output of one file and use for input of another
+tail -2 [file]: output of last 2 rows.
+sort -n lengths.txt | sort -n | head -1: output gives file with the least number of lines. length.txt contains list of files created with wc command.
+bash [program/exe] [file] [output file]: run program against file
+history 10: list last 10 commands and the line number
+![line number]: reruns command from line number
+
+Loops:
+for: start of loop
+for filename in basilisk.dat unicorn.dat
+	"do
+	head -3 $filename
+	done"
+echo: does following command without actually executing it
+echo filename; [rest of arguments]: gives progress of process after each step
